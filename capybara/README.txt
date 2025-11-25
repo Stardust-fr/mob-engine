@@ -1,14 +1,15 @@
 Capybara for Creatures MOB-Engine
 ==============================
-Copyright (c) 2015-2016 BlockMen <blockmen2015@gmail.com>
+Copyright (c) 2025 Stardust-fr
+Based on Creatures MOB-Engine by BlockMen
 
-Version: 2.3.3
-
+Version: 2.3.2
 
 Adds capybaras to Minetest (requires Creatures MOB-Engine).
 Capybaras spawn on dirt and grass blocks during daytime, have 8 HP and are friendly. 
 They can swim, eat grass, and wander around peacefully. When killed or dying they drop 
 meat which can be eaten or cooked.
+
 Capybaras can be tamed by feeding them apples or melon slices. Feed them 5 times to 
 fully tame them. Once tamed, they will follow you when you hold their favorite foods.
 Feeding also restores 2 HP per item.
@@ -17,11 +18,11 @@ Feeding also restores 2 HP per item.
 License: 
 ~~~~~~~~
 Code:
-(c) Copyright 2015-2016 Stardust_fr; modified zlib-License
-see "LICENSE.txt" for details.
+(c) Copyright 2025 Stardust-fr; modified zlib-License
+(Based on Creatures MOB-Engine framework by BlockMen)
 
 Media(textures and meshes/models):
-(c) Copyright (2014-2016) Stardust_fr; CC-BY-SA 3.0
+(c) Copyright 2025 Stardust-fr; CC-BY-SA 3.0
 
 Sounds:
 - creatures_capybara.1.ogg, Breviceps(https://freesound.org/people/Breviceps/sounds/583077/) CC0
@@ -32,4 +33,4 @@ Sounds:
 
 Github:
 ~~~~~~~
-https://github.com/BlockMen/cme/zombie
+https://github.com/Stardust-fr/mob-engine
