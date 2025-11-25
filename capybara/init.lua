@@ -49,8 +49,8 @@ local def = {
 
 	-- Sound definitions
 	sounds = {
-		on_damage = {name = "creatures_capybara.hit", gain = 1.0, distance = 10},
-		on_death = {name = "creatures_capybara.death", gain = 1.0, distance = 10},
+		on_damage = {name = "creatures_capybara_hit", gain = 1.0, distance = 10},
+		on_death = {name = "creatures_capybara_death", gain = 1.0, distance = 10},
 		swim = {name = "creatures_splash", gain = 1.0, distance = 10},
 		random = {
 			idle = {name = "creatures_capybara", gain = 0.6, distance = 10, time_min = 23},
@@ -117,13 +117,14 @@ local def = {
 		},
 	},
 
-	-- Right-click interactions (feeding, taming)
+
+-- Right-click interactions (feeding, taming)
 	on_rightclick = function(self, clicker)
 		local item = clicker:get_wielded_item()
 		if item then
 			local name = item:get_name()
 
-			if name == "default:apple" or name == "farming:melon_slice" then
+			if name == "default:apple" then
 				self.target = clicker
 				self.mode = "follow"
 				self.modetimer = 0
@@ -132,9 +133,11 @@ local def = {
 					self.fed_cnt = (self.fed_cnt or 0) + 1
 				end
 
+
 				local hp = self.object:get_hp()
-				if hp < self.hp_max then
-					self.object:set_hp(math.min(hp + 2, self.hp_max))
+				local max_hp = self.hp or 8 
+				if hp < max_hp then
+					self.object:set_hp(math.min(hp + 2, max_hp))
 				end
 
 				item:take_item()
