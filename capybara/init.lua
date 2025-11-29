@@ -77,7 +77,7 @@ local def = {
 		if not self then
 			return
 		end
-		local pos = self.object:getpos()
+		local pos = self.object:get_pos()
 		if pos then
 			creatures.dropItems(pos, {{"creatures:flesh"}})
 		end
