@@ -1,4 +1,4 @@
-Copyright (c) 2015-2016 BlockMen <blockmen2015@gmail.com>
+Copyright (c) 2025 Stardust-fr <vineetrajani4273@gmail.com>
 
 
 This software is provided 'as-is', without any express or implied warranty. In no

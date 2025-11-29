@@ -1,22 +1,10 @@
 --= Capybara for Creatures MOB-Engine (cme) =--
 -- Copyright (c) 2015-2016 BlockMen <blockmen2015@gmail.com>
+-- Copyright (c) 2025 Stardust-fr
 --
 -- init.lua
 --
--- This software is provided 'as-is', without any express or implied warranty. In no
--- event will the authors be held liable for any damages arising from the use of
--- this software.
---
--- Permission is granted to anyone to use this software for any purpose, including
--- commercial applications, and to alter it and redistribute it freely, subject to the
--- following restrictions:
---
--- 1. The origin of this software must not be misrepresented; you must not
--- claim that you wrote the original software. If you use this software in a
--- product, an acknowledgment in the product documentation is required.
--- 2. Altered source versions must be plainly marked as such, and must not
--- be misrepresented as being the original software.
--- 3. This notice may not be removed or altered from any source distribution.
+-- SPDX-License-Identifier: Zlib
 
 -- Main capybara mob definition
 local def = {
@@ -121,30 +109,31 @@ local def = {
 -- Right-click interactions (feeding, taming)
 	on_rightclick = function(self, clicker)
 		local item = clicker:get_wielded_item()
-		if item then
-			local name = item:get_name()
+		if not item then
+			return true
+		end
+		local name = item:get_name()
 
-			if name == "default:apple" then
-				self.target = clicker
-				self.mode = "follow"
-				self.modetimer = 0
+		if name == "default:apple" then
+			self.target = clicker
+			self.mode = "follow"
+			self.modetimer = 0
 
-				if not self.tamed then
+			if not self.tamed then
 					self.fed_cnt = (self.fed_cnt or 0) + 1
-				end
+			end
 
 
-				local hp = self.object:get_hp()
-				local max_hp = self.hp or 8 
-				if hp < max_hp then
-					self.object:set_hp(math.min(hp + 2, max_hp))
-				end
+			local hp = self.object:get_hp()
+			local max_hp = self.hp or 8 
+			if hp < max_hp then
+				self.object:set_hp(math.min(hp + 2, max_hp))
+			end
 
-				item:take_item()
+			item:take_item()
 
-				if not core.setting_getbool("creative_mode") then
-					clicker:set_wielded_item(item)
-				end
+			if not core.setting_getbool("creative_mode") then
+				clicker:set_wielded_item(item)
 			end
 		end
 		return true

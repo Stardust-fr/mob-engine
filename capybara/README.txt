@@ -5,7 +5,7 @@ Based on Creatures MOB-Engine by BlockMen
 
 Version: 2.3.2
 
-Adds capybaras to Minetest (requires Creatures MOB-Engine).
+Adds capybaras to Luanti.
 Capybaras spawn on dirt and grass blocks during daytime, have 8 HP and are friendly. 
 They can swim, eat grass, and wander around peacefully. When killed or dying they drop 
 meat which can be eaten or cooked.
@@ -18,7 +18,7 @@ Feeding also restores 2 HP per item.
 License: 
 ~~~~~~~~
 Code:
-(c) Copyright 2025 Stardust-fr; modified zlib-License
+(c) Copyright 2025 Stardust-fr; zlib License (Check LICENSE.txt for more details)
 (Based on Creatures MOB-Engine framework by BlockMen)
 
 Media(textures and meshes/models):
